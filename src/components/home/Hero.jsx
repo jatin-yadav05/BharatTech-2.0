@@ -9,10 +9,10 @@ const Hero = () => {
   useEffect(() => {
     const options = {
       strings: [
-        'Create Your Own <span class="text-white/90 font-extrabold">Uni</span><span class="text-zinc-400/90">que</span> <span class="bg-gradient-to-r from-zinc-300 via-zinc-400 to-zinc-500 bg-clip-text text-transparent">Clothing Designs</span> <span class="text-white/90 font-extrabold">Tod</span><span class="text-zinc-400/90">ay</span>'
+        '<span class="text-white/90 font-extrabold">Uni</span><span class="text-zinc-400/90">que</span> <span class="bg-gradient-to-r from-zinc-300 via-zinc-400 to-zinc-500 bg-clip-text text-transparent">Clothing Designs</span> <span class="text-white/90 font-extrabold">Tod</span><span class="text-zinc-400/90">ay</span>'
       ],
-      typeSpeed: 45,
-      backSpeed: 45,
+      typeSpeed: 55,
+      backSpeed: 55,
       loop: true,
       cursorChar: '_',
       showCursor: true,
@@ -33,7 +33,7 @@ const Hero = () => {
         <div className='flex flex-col gap-12 lg:gap-16'>
           {/* Animated Text */}
           <div className='text-3xl md:text-5xl lg:text-6xl font-bold w-full lg:w-[120%] relative lg:left-[15%] z-20 tracking-tight leading-tight'>
-            <span ref={typedRef} className='drop-shadow-lg'></span>
+          Create Your Own <span ref={typedRef} className='drop-shadow-lg'></span>
           </div>
           
           {/* Description */}
