@@ -5,6 +5,8 @@ import Home from './components/Home'
 import SignIn from './components/SignIn'
 import Login from './components/Login'
 import Pricing from './components/Pricing'
+import FAQSection from './components/Faq'
+
 const App = () => {
   return (
     <Layout>
