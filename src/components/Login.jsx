@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from 'axios'
 import { loginRoutes, googleAuth } from '../utils/userApi'
 import { Link } from 'react-router-dom'
-// import { useGoogleLogin } from '@react-oauth/google'
+import { useGoogleLogin } from '@react-oauth/google'
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { Mail, Unlock, ArrowRight } from 'lucide-react';
 import { Lock } from 'lucide-react';
@@ -69,26 +69,26 @@ function Login() {
       console.error(e);
     }
   }
-  // const responseGoogle = async (authResult) => {
+  const responseGoogle = async (authResult) => {
 
-  //   try {
-  //     if (authResult['code']) {
+    try {
+      if (authResult['code']) {
 
-  //       const result = await googleAuth(authResult['code'])
-  //       const { email, username, picture } = result.data.data
-  //       localStorage.setItem("Details", JSON.stringify(result.data.data));
-  //       navigate('/');
-  //     }
+        const result = await googleAuth(authResult['code'])
+        const { email, username, picture } = result.data.data
+        localStorage.setItem("Details", JSON.stringify(result.data.data));
+        navigate('/');
+      }
 
-  //   } catch (e) {
-  //     console.error("Error occurs" + e);
-  //   }
-  // }
-  // const GoogleLogin = useGoogleLogin({
-  //   onSuccess: responseGoogle,
-  //   onError: responseGoogle,
-  //   flow: "auth-code"
-  // })
+    } catch (e) {
+      console.error("Error occurs" + e);
+    }
+  }
+  const GoogleLogin = useGoogleLogin({
+    onSuccess: responseGoogle,
+    onError: responseGoogle,
+    flow: "auth-code"
+  })
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
