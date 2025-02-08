@@ -6,7 +6,7 @@ import SignIn from './components/SignIn'
 import Login from './components/Login'
 import Pricing from './components/Pricing'
 import FAQSection from './components/Faq'
-
+import Not_found from './components/Not_found'
 const App = () => {
   return (
     <Layout>
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/Pricing" element={<Pricing/>}/>
         <Route path="/Faq" element={<FAQSection/>}/>
-  
+        <Route path="/*" element={<Not_found/>}/>
       </Routes>
     </Layout>
   )
