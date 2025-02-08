@@ -3,7 +3,7 @@ import { fabricImg } from '../../utils'
 
 const Fabric = () => {
     return (
-        <section className='h-full max-w-full justify-between p-4 sm:p-6 md:p-10 flex flex-col'>
+        <section className='h-full max-w-full justify-around p-4 sm:p-6 md:p-10 flex flex-col'>
             <div className='relative'>
                 <div className='text-3xl sm:text-5xl md:text-7xl z-20 relative'>
                     YOUR STYLE,

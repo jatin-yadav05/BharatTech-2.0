@@ -3,87 +3,51 @@ import Prompt from './Prompt.jsx'
 import Fabric from './Fabric.jsx'
 import GenderSelection from './GenderSelection.jsx'
 import OwnModal from './OwnModal.jsx'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const Features = () => {
-    const [headingRef, setHeadingRef] = useState(null);
-
     const [genderFeature, setGenderFeature] = useState(true);
     const [fabricFeature, setFabricFeature] = useState(false);
     const [visionFeature, setVisionFeature] = useState(false);
     const [modelFeature, setModelFeature] = useState(false);
 
-    const [width, setWidth] = useState(window.innerWidth);  // Initialize with current window width
+    const [width, setWidth] = useState(window.innerWidth);
 
     const fadeInVariants = {
-        initial: { opacity: 0, x: 50 },
+        initial: { opacity: 0, y: 50 },
         animate: { opacity: 1, x: 0 },
-        exit: { opacity: 0, x: -50 }
+        exit: { opacity: 0, y: -50 }
     };
 
     const transition = {
         type: "tween",
         ease: "easeInOut",
-        duration: 0.7
+        duration: 0.6
     };
-
-    
-        
-        
-
 
 
   useEffect(() => {
-    // Function to update the width state on resize
     const handleResize = () => {
-      setWidth(window.innerWidth);  // Continuously update the width state with the current window width
+      setWidth(window.innerWidth); width
     };
 
-    // Add resize event listener to update width state when window size changes
     window.addEventListener("resize", handleResize);
 
-    // Run handleResize once on mount to capture the initial width
     handleResize();
 
-    // Cleanup the event listener when component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [width]); // Empty dependency array means this effect runs only once on mount
+  }, [width]); 
       
-        // useEffect(() => {
-        //     const handleResize = () => {
-        //       // Check window width and update genderFeature state
-        //       if (window.innerWidth < 768) {
-        //         setGenderFeature(false); // Set to false if width < 768
-        //       } else {
-        //         setGenderFeature(true); // Optional: handle state for larger screens
-        //       }
-        //     };
-        
-        //     // Add the resize event listener
-        //     window.addEventListener("resize", handleResize);
-        
-        //     // Run the function once on mount to handle the initial size
-        //     handleResize();
-        
-        //     // Cleanup the event listener when the component unmounts
-        //     return () => {
-        //       window.removeEventListener("resize", handleResize);
-        //     };
-        //   }, [width]); // Empty dependency array ensures this runs only once on mount
-
-      
-     
-    
       
 
     return (
         <>
           
             <section className='relative'>
-                <h2 className='text-center text-6xl my-10 w-full' ref={headingRef}>Features</h2>
+                <h2 className='text-center text-6xl my-10 w-full'>Features</h2>
 
                 {width > 768 ?  <div className='w-full h-[80vh] flex items-center gap-10'>
                     <div className='w-[50%] h-full text-3xl flex flex-col'>
