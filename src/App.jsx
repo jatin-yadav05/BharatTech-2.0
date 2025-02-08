@@ -17,12 +17,8 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/Pricing" element={<Pricing/>}/>
         <Route path="/Faq" element={<FAQSection/>}/>
-<<<<<<< HEAD
         <Route path="/*" element={<Not_found/>}/>
-=======
         <Route path="/About" element={<AboutUs/>}/>
-
->>>>>>> 91020139159f6679675d5d2dd654c63f7ec7c2fb
       </Routes>
     </Layout>
   )
