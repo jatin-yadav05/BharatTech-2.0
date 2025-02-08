@@ -4,7 +4,8 @@ import Layout from './Layout'
 import Home from './components/Home'
 import SignIn from './components/SignIn'
 import Login from './components/Login'
-import Not_found from './components/Not_found'
+import Pricing from './components/Pricing'
+import FAQSection from './components/Faq'
 
 const App = () => {
   return (
@@ -13,7 +14,9 @@ const App = () => {
         <Route path="/" element={<Home/>} />
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/login" element={<Login/>} />
-        <Route path="*" element={<Not_found/>}/>
+        <Route path="/Faq" element={<FAQSection/>}/>
+        <Route path="*" element={<Pricing/>}/>
+
       </Routes>
     </Layout>
   )
