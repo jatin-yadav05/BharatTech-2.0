@@ -54,10 +54,10 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+        <div className="text-center max-w-3xl mx-auto mb-24">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 tracking-tight">
             Plans and Pricing
           </h1>
           <p className="text-lg text-zinc-400 mb-6">
@@ -65,7 +65,7 @@ const Pricing = () => {
           </p>
           
           {/* Toggle */}
-          <div className="inline-flex items-center bg-white/[0.03] rounded-full p-1">
+          <div className="inline-flex items-center bg-white/[0.03] rounded-full p-1 mb-8">
             <button
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${
                 !isAnnual 
@@ -90,26 +90,22 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={plan.name}
-              className={`relative rounded-2xl border ${
-                plan.highlighted 
-                  ? 'border-white/10 bg-white/[0.02] scale-[1.02] shadow-xl' 
-                  : 'border-white/[0.08] hover:border-white/10'
-              } p-6 transition-all duration-300`}
+              className={`relative rounded-2xl border ${plan.highlighted ? 'border-white/10 bg-white/[0.02] scale-[1.02] shadow-xl' : 'border-white/[0.08] hover:border-white/10'} p-8 transition-all duration-300`}
             >
               {plan.highlighted && (
                 <>
                   {/* Popular badge */}
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2">
                     <div className="relative">
                       {/* Badge glow */}
                       <div className="absolute inset-0 bg-white/10 rounded-full blur-[2px]" />
                       
                       {/* Badge content */}
-                      <div className="relative px-4 py-1.5 bg-white/[0.03] backdrop-blur-sm rounded-full border border-white/10">
+                      <div className="relative px-4 py-2 bg-white/[0.03] backdrop-blur-sm rounded-full border border-white/10">
                         <div className="flex items-center gap-1.5">
                           <span className="inline-block w-1 h-1 rounded-full bg-white/60 animate-pulse" />
                           <span className="text-xs font-medium text-white/80">Most Popular</span>
@@ -120,7 +116,7 @@ const Pricing = () => {
                 </>
               )}
               
-              <div className="mb-6">
+              <div className="mb-8">
                 <h3 className="text-xl font-medium text-white mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-2">
                   <span className="text-4xl font-bold text-white">{plan.price}</span>
@@ -133,7 +129,7 @@ const Pricing = () => {
                 <p className="text-sm text-zinc-400 mt-4">{plan.description}</p>
               </div>
 
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-center gap-2.5">
                     <Check className="h-4 w-4 text-white/30" />
@@ -146,13 +142,13 @@ const Pricing = () => {
                 onClick={() => {
                   if (plan.name === "Pro") {
                     createRazorpay(isAnnual ? 1099 : 99, navigate);
-                  }else if(plan.name === "Free"){
-                    navigate('/signin')
-                  }else if(plan.name === "Enterprise"){
-                    navigate('/contact')
+                  } else if (plan.name === "Free") {
+                    navigate('/signin');
+                  } else if (plan.name === "Enterprise") {
+                    navigate('/contact');
                   } 
                 }}
-                className={`w-full py-2.5 px-4 rounded-xl text-sm font-medium transition-colors ${
+                className={`w-full py-3 px-4 rounded-xl text-sm font-medium transition-colors ${
                   plan.highlighted
                     ? 'bg-white text-black hover:bg-white/90'
                     : 'border border-white/10 text-white hover:bg-white/[0.03]'
@@ -169,5 +165,3 @@ const Pricing = () => {
 };
 
 export default Pricing;
-
-
