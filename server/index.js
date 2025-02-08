@@ -8,7 +8,7 @@ let port = process.env.PORT;
 const razorpay = require("razorpay");
 let user = require("./models/userSchema");
 const userRoutes = require("./routes/userRoutes")
-// const imageRoutes = require('./routes/imageRoutes');
+const imageRoutes = require('./routes/imageRoutes');
 const cors = require("cors");
 
 app.use(cors({
@@ -20,7 +20,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 app.use("/api/auth", userRoutes);
-// app.use('/api/images', imageRoutes);
+app.use('/api/images', imageRoutes);
 
 
 app.use((err, req, res, next) => {
