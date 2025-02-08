@@ -5,6 +5,7 @@ import Home from './components/Home'
 import SignIn from './components/SignIn'
 import Login from './components/Login'
 import Not_found from './components/Not_found'
+import FAQSection from './components/Faq'
 
 const App = () => {
   return (
