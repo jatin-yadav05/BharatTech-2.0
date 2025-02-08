@@ -4,7 +4,34 @@ const FAQSection = () => {
   const [openQuestion, setOpenQuestion] = useState(null);
 
   const faqs = [
-    
+    {
+      question: 'What is StyleMe?',
+      answer: 'StyleMe is an innovative platform that allows users to design their own clothing. You can customize every detail, from fabric and color to size and style, and see a 3D realistic visualization of your design before buying it.',
+    },
+    {
+      question: 'How does StyleMe work?',
+      answer: 'Our platform uses cutting-edge 3D modeling technology to bring your design to life. Simply choose a garment, customize it to your liking, and preview the results in real-time.',
+    },
+    {
+      question: 'Do I need any design experience to use StyleMe?',
+      answer: 'No design experience is needed! Our intuitive interface makes it easy for anyone to create custom clothing. We provide helpful tools and templates to guide you through the process.',
+    },
+    {
+      question: 'Can I upload my own photo to use as a model?',
+      answer: 'Yes, you can upload your own photo to use as a model. This allows you to see how the clothing will look on your specific body type.',
+    },
+    {
+      question: 'What kinds of customization options are available?',
+      answer: 'We offer a wide range of customization options, including fabric selection, color palettes, size adjustments, sleeve styles, neckline variations, and more.',
+    },
+    {
+      question: "Can I make adjustments to my design after it's generated?",
+      answer: 'Yes, you can make adjustments to your design at any time before placing your order. Our platform allows you to easily modify your creations until you are completely satisfied.',
+    },
+    {
+      question: 'Is my personal information secure?',
+      answer: 'Yes, your personal information is secure with us. We use industry-standard security measures to protect your data and ensure your privacy.',
+    },
   ];
 
   const toggleQuestion = (index) => {
