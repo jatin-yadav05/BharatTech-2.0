@@ -9,7 +9,7 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { registerRoutes } from '../utils/userApi';
-// import { googleAuth } from '../utils/userApi';
+import { googleAuth } from '../utils/userApi';
 function SignIn() {
   const navigate=useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -91,26 +91,26 @@ function SignIn() {
       console.error(e);
     }
   }
-//   const responseGoogle=async(authResult)=>{
-//     try{
-//       if(authResult['code']){
+  const responseGoogle=async(authResult)=>{
+    try{
+      if(authResult['code']){
 
-//         const result=await googleAuth(authResult['code'])
-//         const {email,username,picture}=result.data.data
-//         localStorage.setItem("Details",JSON.stringify(result.data.data));
-//         navigate('/');
-//       }
+        const result=await googleAuth(authResult['code'])
+        const {email,username,picture}=result.data.data
+        localStorage.setItem("Details",JSON.stringify(result.data.data));
+        navigate('/');
+      }
     
-//     }catch(e){
-//       console.error("Error occurs"+e);
-//     }
-// }
+    }catch(e){
+      console.error("Error occurs"+e);
+    }
+}
 
-  // const GoogleSign = useGoogleLogin({
-  //   onSuccess: responseGoogle,
-  //   onError: responseGoogle,
-  //   flow: "auth-code"
-  // });
+  const GoogleSign = useGoogleLogin({
+    onSuccess: responseGoogle,
+    onError: responseGoogle,
+    flow: "auth-code"
+  });
 
   return (
     <div className="min-h-[85vh] bg-black flex items-center justify-center p-3 relative overflow-hidden mt-24">
