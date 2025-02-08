@@ -1,10 +1,10 @@
 const {registeration,login, googleLogin} =require('../controllers/userDetails') 
-// const {order,payment}=require("../controllers/Razorpay")
+const {order,payment}=require("../controllers/Razorpay")
 let router=require("express").Router();
 router.post('/register',registeration)
 router.post('/login',login);
-// router.post('/order',order)
-// router.get("/payment/:paymentId",payment)
+router.post('/order',order)
+router.get("/payment/:paymentId",payment)
 router.get("/google",googleLogin);
 
 module.exports=router;
