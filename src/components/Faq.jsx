@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus, Mail, MessageCircle, Phone, MapPin } from 'lucide-react';
-import { FaQuestionCircle, FaCog, FaUser, FaCamera, FaWrench, FaPencilAlt, FaLock } from 'react-icons/fa';
 
 const FAQItem = ({ question, answer, isOpen, onClick, category }) => (
   <motion.div
